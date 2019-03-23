@@ -1,4 +1,4 @@
-//import * as mocha from  'mocha';
+import * as mocha from  'mocha';
 import * as Chai from 'chai';
 import * as td from 'testdouble';
 const supertest = require('supertest');
