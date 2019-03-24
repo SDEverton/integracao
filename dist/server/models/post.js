@@ -1,34 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 function default_1(sequelize, DataTypes) {
-    var Produto = sequelize.define('Produto', {
+    var Post = sequelize.define('Post', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                notEmpty: true
-            }
         },
-        descricao: {
+        text: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                notEmpty: true
-            }
         },
-        valor: {
-            type: DataTypes.FLOAT,
+        authorId: {
+            type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                notEmpty: true
-            }
         }
     });
-    return Produto;
+    return Post;
 }
 exports.default = default_1;

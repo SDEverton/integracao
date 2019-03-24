@@ -1,33 +1,24 @@
 export default function (sequelize, DataTypes) {
 
-    const Produto = sequelize.define('Produto', {
+    const Post= sequelize.define('Post', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                notEmpty: true
-            }
         },
-        descricao: {
+        text: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                notEmpty: true
-            }
         },
-        valor: {
-            type: DataTypes.FLOAT,
+        authorId: {
+            type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                notEmpty: true
-            }
         }
     });
 
-    return Produto;
+    return Post;
 }

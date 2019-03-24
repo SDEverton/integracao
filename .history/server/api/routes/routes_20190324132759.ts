@@ -1,8 +1,8 @@
-import { Application } from 'express';
+import { Application, Request, Response } from 'express';
 import UserRoutes from '../../modules/User/routes';
+import ProdutoRoutes from '../../modules/Produtos/routes';
 import TokenRoutes from '../../modules/auth/auth';
 import AuthorRoutes from '../../modules/author/routes';
-import PostRoutes from '../../modules/posts/routes';
 
 class Routes {
 
@@ -21,12 +21,6 @@ class Routes {
         app.route('/api/author/:id').get(AuthorRoutes.findOne);
         app.route('/api/author/:id/update').put(AuthorRoutes.update);
         app.route('/api/author/:id/destroy').delete(AuthorRoutes.destroy);
-        //rota relacionamento
-        app.route('/api/post/all').get(PostRoutes.index);
-        app.route("/api/post/create").post(PostRoutes.create);
-        app.route("/api/post/:id").get(PostRoutes.findOne);
-        app.route("/api/post/:id/update").put(PostRoutes.update);
-        app.route("/api/post/:id/destroy").delete(PostRoutes.destroy);
 
         app.route('/token').post(TokenRoutes.auth)
     }
